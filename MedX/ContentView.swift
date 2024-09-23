@@ -10,16 +10,31 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            VStack {
-                NavigationLink {
-                    DetailView()
-                } label: {
-                    Image(systemName: "eye")
-                    Text("Show the view")
+            List {
+                Section {
+                    NavigationLink {
+                        DetailView()
+                    } label: {
+                        Image(systemName: "eye")
+                        Text("Show the view")
+                    }
+                    .buttonStyle(.borderedProminent)
+                } header: {
+                    Text("Links")
                 }
-                .buttonStyle(.borderedProminent)
+                Section {
+                    Text("Detail view")
+                    Text("Detail view")
+                    Text("Detail view")
+                    Text("Detail view")
+                } header : {
+                    Text("Others")
+                }
             }
-            .padding()
+
+            .listStyle(.plain)
+            .navigationTitle("MedX")
+            .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }
